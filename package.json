@@ -6,6 +6,7 @@
     "aphrodite": "^1.2.5",
     "history": "^4.7.2",
     "immutable": "^3.8.2",
+    "jsx-control-statements": "^3.2.8",
     "nanoid": "^1.0.1",
     "prop-types": "^15.6.0",
     "react": "^16.1.1",
