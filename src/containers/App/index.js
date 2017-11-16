@@ -1,3 +1,5 @@
+import { css } from 'aphrodite/no-important'
+
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
@@ -6,7 +8,6 @@ import { connect } from 'react-redux'
 import { getAPIData } from './actions'
 import { selectApiData } from './selectors'
 
-import { css } from 'aphrodite/no-important'
 import { styles } from './styles'
 
 import logo from './images/logo.svg'
