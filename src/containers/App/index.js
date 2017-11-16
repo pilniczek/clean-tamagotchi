@@ -1,4 +1,5 @@
 import { css } from 'aphrodite/no-important'
+import uniId from '../../utils'
 
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
@@ -24,7 +25,7 @@ class App extends Component {
   render() {
     return (
       <div className={css(styles.app)}>
-        <div className={css(styles.appHeader)}>
+        <div className={css(styles.appHeader)} id={uniId()} >
           <img src={logo} className={css(styles.appLogo)} alt="logo" />
           <h2>Welcome to React</h2>
         </div>
