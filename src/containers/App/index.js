@@ -6,6 +6,9 @@ import { connect } from 'react-redux'
 import { getAPIData } from './actions'
 import { selectApiData } from './selectors'
 
+import { css } from 'aphrodite/no-important'
+import { styles } from './styles'
+
 import logo from './images/logo.svg'
 
 const getMyIp = (apiData) => (
@@ -19,15 +22,15 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app">
-        <div className="app-header">
-          <img src={logo} className="app-logo" alt="logo" />
+      <div className={css(styles.app)}>
+        <div className={css(styles.appHeader)}>
+          <img src={logo} className={css(styles.appLogo)} alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-        <p className="app-intro">
+        <p className={css(styles.appIntro)}>
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <p className="app-intro">
+        <p className={css(styles.appIntro)}>
           Your IP is: {getMyIp(this.props.apiData)}
         </p>
       </div>
