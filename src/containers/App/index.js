@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import uniId from '../../utils'
+import SmartLink from '../../components/SmartLink'
 import { getAPIData } from './actions'
 import { selectApiData } from './selectors'
 
@@ -35,6 +36,29 @@ class App extends Component {
         <p className={css(styles.appIntro)}>
           Your IP is: {getMyIp(this.props.apiData)}
         </p>
+
+        <SmartLink />
+        <br />
+        <SmartLink>
+          a
+        </SmartLink>
+        <br />
+        <SmartLink>
+          a
+        </SmartLink>
+        <br />
+        <SmartLink type="external">
+          external
+        </SmartLink>
+        <br />
+        <SmartLink type="internal">
+          internal
+        </SmartLink>
+        <br />
+        <SmartLink type="ui">
+          ui
+        </SmartLink>
+
       </div>
     )
   }
