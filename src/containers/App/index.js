@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 import { getAPIData } from './actions'
 import { selectApiData } from './selectors'
 
-import { styles } from './styles'
+import styles from './styles'
 
 import logo from './images/logo.svg'
 
