@@ -4,9 +4,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import SmartLink from '../../components/SmartLink'
+import Image from '../../components/Image'
 import uniId from '../../utils'
 import { getAPIData } from './actions'
 import logo from './images/logo.svg'
+import product from './images/product.jpg';
 import { selectApiData } from './selectors'
 import styles from './styles'
 
@@ -33,74 +35,169 @@ class App extends Component {
         <p className={css(styles.appIntro)}>
           Your IP is: {getMyIp(this.props.apiData)}
         </p>
+
+
         <table>
-          <tr>
-            <td>
-              <SmartLink targetType="external">
-                external
-              </SmartLink>
-              <br />
-              <SmartLink targetType="internal">
-                internal
-              </SmartLink>
-              <br />
-              <SmartLink targetType="ui">
-                ui
-              </SmartLink>
-            </td>
-            <td>
-              <SmartLink targetType="external" type="btn">
-                external
-              </SmartLink>
-              <br />
-              <SmartLink targetType="internal" type="btn">
-                internal
-              </SmartLink>
-              <br />
-              <SmartLink targetType="ui" type="btn">
-                ui
-              </SmartLink>
-            </td>
-            <td>
-              <SmartLink targetType="external" type="btnInv">
-                external
-              </SmartLink>
-              <br />
-              <SmartLink targetType="internal" type="btnInv">
-                internal
-              </SmartLink>
-              <br />
-              <SmartLink targetType="ui" type="btnInv">
-                ui
-              </SmartLink>
-            </td>
-            <td>
-              <SmartLink targetType="external" type="btnBig">
-                external
-              </SmartLink>
-              <br />
-              <SmartLink targetType="internal" type="btnBig">
-                internal
-              </SmartLink>
-              <br />
-              <SmartLink targetType="ui" type="btnBig">
-                ui
-              </SmartLink>
-            </td>
-            <td>
-              <SmartLink targetType="external" type="btnInvBig">
-                external
-              </SmartLink>
-              <br />
-              <SmartLink targetType="internal" type="btnInvBig">
-                internal
-              </SmartLink>
-              <br />
-              <SmartLink targetType="ui" type="btnInvBig">
-                ui
-              </SmartLink>
-            </td>
-          </tr>
+          <tbody>
+            <tr>
+              <td>
+                <Image src={product} alt="product" />
+              </td>
+              <td>
+                <Image
+                  src={product}
+                  alt="product"
+                  isCropped
+                  pathName="leftV"
+                  width={300}
+                  height={300}
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <SmartLink targetType="external">
+                  external
+                </SmartLink>
+                <br />
+                <SmartLink targetType="internal">
+                  internal
+                </SmartLink>
+                <br />
+                <SmartLink targetType="ui">
+                  ui
+                </SmartLink>
+              </td>
+              <td>
+                <SmartLink targetType="external" type="btn">
+                  external
+                </SmartLink>
+                <br />
+                <SmartLink targetType="internal" type="btn">
+                  internal
+                </SmartLink>
+                <br />
+                <SmartLink targetType="ui" type="btn">
+                  ui
+                </SmartLink>
+              </td>
+              <td>
+                <SmartLink targetType="external" type="btnInv">
+                  external
+                </SmartLink>
+                <br />
+                <SmartLink targetType="internal" type="btnInv">
+                  internal
+                </SmartLink>
+                <br />
+                <SmartLink targetType="ui" type="btnInv">
+                  ui
+                </SmartLink>
+              </td>
+              <td>
+                <SmartLink targetType="external" type="btnBig">
+                  external
+                </SmartLink>
+                <br />
+                <SmartLink targetType="internal" type="btnBig">
+                  internal
+                </SmartLink>
+                <br />
+                <SmartLink targetType="ui" type="btnBig">
+                  ui
+                </SmartLink>
+              </td>
+              <td>
+                <SmartLink targetType="external" type="btnInvBig">
+                  external
+                </SmartLink>
+                <br />
+                <SmartLink targetType="internal" type="btnInvBig">
+                  internal
+                </SmartLink>
+                <br />
+                <SmartLink targetType="ui" type="btnInvBig">
+                  ui
+                </SmartLink>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <SmartLink targetType="external">
+                  external
+                </SmartLink>
+                <br />
+                <SmartLink targetType="internal">
+                  internal
+                </SmartLink>
+                <br />
+                <SmartLink targetType="ui">
+                  ui
+                </SmartLink>
+              </td>
+              <td>
+                <SmartLink targetType="external" type="btn">
+                  external
+                </SmartLink>
+                <br />
+                <SmartLink targetType="internal" type="btn">
+                  internal
+                </SmartLink>
+                <br />
+                <SmartLink targetType="ui" type="btn">
+                  ui
+                </SmartLink>
+              </td>
+              <td>
+                <SmartLink targetType="external" type="btnInv">
+                  external
+                </SmartLink>
+                <br />
+                <SmartLink targetType="internal" type="btnInv">
+                  internal
+                </SmartLink>
+                <br />
+                <SmartLink targetType="ui" type="btnInv">
+                  ui
+                </SmartLink>
+              </td>
+              <td>
+                <SmartLink targetType="external" type="btnBig">
+                  external
+                </SmartLink>
+                <br />
+                <SmartLink targetType="internal" type="btnBig">
+                  internal
+                </SmartLink>
+                <br />
+                <SmartLink targetType="ui" type="btnBig">
+                  ui
+                </SmartLink>
+              </td>
+              <td>
+                <SmartLink targetType="external" type="btnInvBig">
+                  external
+                </SmartLink>
+                <br />
+                <SmartLink targetType="internal" type="btnInvBig">
+                  internal
+                </SmartLink>
+                <br />
+                <SmartLink targetType="ui" type="btnInvBig">
+                  ui
+                </SmartLink>
+              </td>
+            </tr>
+          </tbody>
         </table>
 
       </div>
