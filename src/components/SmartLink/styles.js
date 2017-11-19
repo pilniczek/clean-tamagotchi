@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
     background: 'transparent',
     border: 'none',
     textDecoration: 'underline',
+    padding: '0',
     ':hover': {
       cursor: 'pointer',
     },
@@ -17,26 +18,30 @@ const styles = StyleSheet.create({
     ...m.btnBase,
     padding: v.basePad,
     color: 'white',
+    marginBottom: '.85rem',
   },
   btnBig: {
     ...m.btnBase,
     padding: v.bigPad,
     color: 'white',
+    marginBottom: '1.7rem',
   },
   btnInv: {
     ...m.btnBase,
     padding: v.basePad,
     background: 'transparent',
+    marginBottom: '.85rem',
   },
   btnInvBig: {
     ...m.btnBase,
     padding: v.bigPad,
     background: 'transparent',
+    marginBottom: '1.7rem',
   },
   external: {
-    color: v.purple,
-    borderColor: v.purple,
-    backgroundColor: v.purple,
+    color: v.violet,
+    borderColor: v.violet,
+    backgroundColor: v.violet,
   },
   internal: {
     color: v.blue,
@@ -44,9 +49,9 @@ const styles = StyleSheet.create({
     backgroundColor: v.blue,
   },
   ui: {
-    color: 'black',
-    borderColor: 'black',
-    backgroundColor: 'black',
+    color: v.dark,
+    borderColor: v.dark,
+    backgroundColor: v.dark,
   },
 })
 

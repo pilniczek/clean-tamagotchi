@@ -1,6 +1,15 @@
 export const v = {
+  pink: '#ff6188',
+  green: '#a9dc76',
+  yellow: '#ffd866',
+  orange: '#fc9867',
+  violet: '#ab9df2',
+  blue: '#78dce8',
+  dark: '#282c34',
+  grey: '#454952',
+  black: '#16171d',
+  light: '#F8F8F2',
   purple: '#79589f',
-  blue: '#8cbcf3',
   extSign: '"►"',
   bigPad: '1.7rem 3.4rem',
   basePad: '.85rem 1.7rem',
@@ -15,9 +24,12 @@ export const m = {
     borderRadius: v.fullRad,
     borderStyle: 'solid',
     borderWidth: '1px',
-    marginBottom: '1.7rem',
     fontSize: '1.7rem',
     cursor: 'pointer',
+    ':focus': {
+      outline: 'none',
+      boxShadow: '0px 0px 5px black',
+    },
   },
   arrowBefore: {
     ':before': {
@@ -27,4 +39,13 @@ export const m = {
       fontSize: '80%',
     },
   },
+}
+
+export const b = {
+  xs: 480,
+  s: 720,
+  m: 1080,
+  l: 1366,
+  xl: 1920,
+  xxl: 2560,
 }
