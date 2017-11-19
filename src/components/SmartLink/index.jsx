@@ -1,34 +1,35 @@
-import React from 'react'
-import { string, node, func } from 'prop-types'
-import { Link } from 'react-router-dom'
 import { css } from 'aphrodite/no-important'
+import { func, node, oneOf, string } from 'prop-types'
+import React from 'react'
+import { Link } from 'react-router-dom'
 import styles from './styles'
 
+
 const SmartLink = ({
-  className, to, children, type, onClick,
+  className, to, children, type, targetType, onClick,
 }) => {
-  if (type === 'external') {
+  if (targetType === 'external') {
     return (
       <a
         href={to}
         target="_blank"
-        className={[className, css(styles.link, styles[type])].join(' ')}
+        className={[className, css(styles[targetType], styles[type])].join(' ')}
         onClick={onClick}
       >
         {children}
       </a>
     )
   }
-  if (type === 'internal') {
+  if (targetType === 'internal') {
     return (
-      <Link to={to} className={[className, css(styles.link, styles[type])].join(' ')}>
+      <Link to={to} className={[className, css(styles[targetType], styles[type])].join(' ')}>
         {children}
       </Link>
     )
   }
-  if (type === 'ui') {
+  if (targetType === 'ui') {
     return (
-      <button className={[className, css(styles.link, styles[type])].join(' ')} onClick={onClick}>
+      <button className={[className, css(styles[targetType], styles[type])].join(' ')} onClick={onClick}>
         {children}
       </button>
     )
@@ -40,16 +41,18 @@ SmartLink.propTypes = {
   to: string,
   className: string,
   children: node,
-  type: string,
+  targetType: string,
   onClick: func,
+  type: oneOf(['btn', 'btnBig', 'btnInv', 'btnInvBig', 'link']),
 }
 
 SmartLink.defaultProps = {
   to: '/',
   className: '',
-  type: 'internal',
+  targetType: 'internal',
   children: 'odkaz',
   onClick: null,
+  type: 'link',
 }
 
 export default SmartLink

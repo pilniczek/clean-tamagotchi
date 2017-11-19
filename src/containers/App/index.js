@@ -1,18 +1,15 @@
 import { css } from 'aphrodite/no-important'
-
-import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { bindActionCreators } from 'redux'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
-import uniId from '../../utils'
+import { bindActionCreators } from 'redux'
 import SmartLink from '../../components/SmartLink'
+import uniId from '../../utils'
 import { getAPIData } from './actions'
+import logo from './images/logo.svg'
 import { selectApiData } from './selectors'
-
 import styles from './styles'
 
-import logo from './images/logo.svg'
 
 const getMyIp = (apiData) => (
   (apiData && apiData.origin) && apiData.origin.split(', ')[1]
@@ -47,15 +44,39 @@ class App extends Component {
           a
         </SmartLink>
         <br />
-        <SmartLink type="external">
+        <SmartLink targetType="external">
           external
         </SmartLink>
         <br />
-        <SmartLink type="internal">
+        <SmartLink targetType="internal">
           internal
         </SmartLink>
         <br />
-        <SmartLink type="ui">
+        <SmartLink targetType="ui">
+          ui
+        </SmartLink>
+        <br />
+        <SmartLink targetType="external" type="btn">
+          external
+        </SmartLink>
+        <br />
+        <SmartLink targetType="internal" type="btn">
+          internal
+        </SmartLink>
+        <br />
+        <SmartLink targetType="ui" type="btn">
+          ui
+        </SmartLink>
+        <br />
+        <SmartLink targetType="external" type="btnInv">
+          external
+        </SmartLink>
+        <br />
+        <SmartLink targetType="internal" type="btnInv">
+          internal
+        </SmartLink>
+        <br />
+        <SmartLink targetType="ui" type="btnInv">
           ui
         </SmartLink>
 
