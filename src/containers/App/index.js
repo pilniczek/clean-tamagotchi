@@ -36,26 +36,15 @@ class App extends Component {
           Your IP is: {getMyIp(this.props.apiData)}
         </p>
 
-
-        <table>
-          <tbody>
-            <tr>
-              <td>
-                <Image src={product} alt="product" />
-              </td>
-              <td>
-                <Image
-                  src={product}
-                  alt="product"
-                  isCropped
-                  pathName="leftV"
-                  width={300}
-                  height={300}
-                />
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <Image src={product} alt="product" />
+        <Image
+          src={product}
+          alt="product"
+          isCropped
+          pathName="leftV"
+          width={300}
+          height={300}
+        />
 
         <table>
           <tbody>
