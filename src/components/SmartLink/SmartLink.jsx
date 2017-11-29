@@ -1,20 +1,32 @@
 import { css } from 'aphrodite/no-important'
-import { func, node, oneOf, string } from 'prop-types'
+import { func, node, oneOf, string, shape } from 'prop-types'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './styles'
 
 
 const SmartLink = ({
-  className, to, children, type, targetType, onClick,
+  className,
+  to,
+  children,
+  type,
+  targetType,
+  id,
+  ui,
+  actions: { toggle },
 }) => {
+  const handleClick = () => {
+    if (ui === 'toggle') {
+      return toggle(id)
+    }
+    return null
+  }
   if (targetType === 'external') {
     return (
       <a
         href={to}
         target="_blank"
         className={[className, css(styles[targetType], styles[type])].join(' ')}
-        onClick={onClick}
       >
         {children}
       </a>
@@ -22,14 +34,14 @@ const SmartLink = ({
   }
   if (targetType === 'internal') {
     return (
-      <Link to={to} className={[className, css(styles[targetType], styles[type])].join(' ')}>
+      <Link to={to} className={[className, css(styles[targetType], styles[type])].join(' ')} onClick={handleClick}>
         {children}
       </Link>
     )
   }
   if (targetType === 'ui') {
     return (
-      <button className={[className, css(styles[targetType], styles[type])].join(' ')} onClick={onClick}>
+      <button className={[className, css(styles[targetType], styles[type])].join(' ')} onClick={handleClick}>
         {children}
       </button>
     )
@@ -38,21 +50,27 @@ const SmartLink = ({
 }
 
 SmartLink.propTypes = {
+  id: string,
+  ui: string,
   to: string,
   className: string,
   children: node,
   targetType: string,
-  onClick: func,
   type: oneOf(['btn', 'btnBig', 'btnInv', 'btnInvBig', 'link']),
+  actions: shape({
+    toggle: func,
+  }),
 }
 
 SmartLink.defaultProps = {
+  id: 'link',
+  ui: null,
   to: '/',
   className: '',
   targetType: 'internal',
   children: 'odkaz',
-  onClick: null,
   type: 'link',
+  actions: {},
 }
 
 export default SmartLink

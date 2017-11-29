@@ -22,7 +22,7 @@ const Image = ({
       className={css(styles[className])}
     >
       <clipPath id="clip-path">
-        <CropPaths name={pathName} width={width} height={height} />
+        <CropPaths pathName={pathName} width={width} height={height} />
       </clipPath>
       <image
         xlinkHref={src}

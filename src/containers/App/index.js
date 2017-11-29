@@ -46,77 +46,10 @@ class App extends Component {
           height={300}
         />
 
-        <table>
-          <tbody>
-            <tr>
-              <td>
-                <SmartLink targetType="external">
-                  external
-                </SmartLink>
-                <br />
-                <SmartLink targetType="internal">
-                  internal
-                </SmartLink>
-                <br />
-                <SmartLink targetType="ui">
-                  ui
-                </SmartLink>
-              </td>
-              <td>
-                <SmartLink targetType="external" type="btn">
-                  external
-                </SmartLink>
-                <br />
-                <SmartLink targetType="internal" type="btn">
-                  internal
-                </SmartLink>
-                <br />
-                <SmartLink targetType="ui" type="btn">
-                  ui
-                </SmartLink>
-              </td>
-              <td>
-                <SmartLink targetType="external" type="btnInv">
-                  external
-                </SmartLink>
-                <br />
-                <SmartLink targetType="internal" type="btnInv">
-                  internal
-                </SmartLink>
-                <br />
-                <SmartLink targetType="ui" type="btnInv">
-                  ui
-                </SmartLink>
-              </td>
-              <td>
-                <SmartLink targetType="external" type="btnBig">
-                  external
-                </SmartLink>
-                <br />
-                <SmartLink targetType="internal" type="btnBig">
-                  internal
-                </SmartLink>
-                <br />
-                <SmartLink targetType="ui" type="btnBig">
-                  ui
-                </SmartLink>
-              </td>
-              <td>
-                <SmartLink targetType="external" type="btnInvBig">
-                  external
-                </SmartLink>
-                <br />
-                <SmartLink targetType="internal" type="btnInvBig">
-                  internal
-                </SmartLink>
-                <br />
-                <SmartLink targetType="ui" type="btnInvBig">
-                  ui
-                </SmartLink>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <SmartLink targetType="ui" ui="toggle" id="uiFunc1">
+          ui
+        </SmartLink>
+
         <table>
           <tbody>
             <tr>

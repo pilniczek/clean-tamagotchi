@@ -8,6 +8,8 @@ import createGlobalReducer from './global-reducer'
 import globalSagas from './global-sagas'
 
 export const history = createHistory()
+
+const initialState = {}
 const sagaMiddleware = createSagaMiddleware()
 
 /* eslint-disable no-underscore-dangle */
@@ -22,6 +24,7 @@ const middlewares = [
 
 const store = createStore(
   createGlobalReducer(),
+  initialState,
   composeEnhancers(applyMiddleware(...middlewares)),
 )
 
