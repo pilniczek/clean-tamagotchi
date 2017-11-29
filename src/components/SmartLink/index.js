@@ -3,14 +3,6 @@ import { toggle } from '../../store/actions/uiActions'
 import uiSelectors from '../../store/selectors/uiSelectors'
 import SmartLink from './SmartLink'
 
-const componentDidCatch = (error, info) => {
-  // Display fallback UI
-  // this.setState({ hasError: true });
-  // You can also log the error to an error reporting service
-  // logErrorToMyService(error, info);
-  return {}
-}
-
 const mapStateToProps = (state, locals) => {
   if (locals.ui === 'toggle') {
     return ({

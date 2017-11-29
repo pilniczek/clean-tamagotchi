@@ -34,7 +34,7 @@ const SmartLink = ({
   }
   if (targetType === 'internal') {
     return (
-      <Link to={to} className={[className, css(styles[targetType], styles[type])].join(' ')} onClick={handleClick}>
+      <Link to={to} href={to} className={[className, css(styles[targetType], styles[type])].join(' ')} onClick={handleClick}>
         {children}
       </Link>
     )
