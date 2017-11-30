@@ -1,23 +1,28 @@
 import React, { Component } from 'react'
+import Raven from 'raven-js'
+
 
 class ErrorBoundary extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      hasError: false,
-    }
+    this.state = { error: null }
   }
-
-  componentDidCatch(error, info) {
-    this.setState({ hasError: true })
-    // You can also log the error to an error reporting service
-    // logErrorToMyService(error, info)
+  componentDidCatch(error, errorInfo) {
+    this.setState({ error })
+    Raven.captureException(error, { extra: errorInfo })
   }
-
   render() {
-    if (this.state.hasError) {
-      return <h1>Uh oh! Something went wrong.</h1>
+    if (this.state.error) {
+      return (
+        <button onClick={() => Raven.lastEventId() && Raven.showReportDialog()}>
+          <p>We're sorry — something's gone wrong.</p>
+          <p>Our team has been notified, click here fill out a report.</p>
+        </button>
+      )
     }
     return this.props.children
   }
 }
+
+
+export default ErrorBoundary
