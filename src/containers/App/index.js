@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import SmartLink from '../../components/SmartLink'
+import Toggable from '../../components/Toggable'
 import Image from '../../components/Image'
 import uniId from '../../utils'
 import { getAPIData } from './actions'
@@ -11,6 +12,7 @@ import logo from './images/logo.svg'
 import product from './images/product.jpg';
 import { selectApiData } from './selectors'
 import styles from './styles'
+import ErrorBoundary from '../../components/ErrorBoundary'
 
 
 const getMyIp = (apiData) => (
@@ -35,6 +37,20 @@ class App extends Component {
         <p className={css(styles.appIntro)}>
           Your IP is: {getMyIp(this.props.apiData)}
         </p>
+
+        <ErrorBoundary>
+          <Toggable
+            id="omg"
+            icon
+            myClass="toggable"
+            visible={
+              <p>username</p>
+            }
+          >
+            <p>name</p>
+            <p>email</p>
+          </Toggable>
+        </ErrorBoundary>
 
         <Image src={product} alt="product" />
         <Image
