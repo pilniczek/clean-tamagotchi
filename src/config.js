@@ -9,7 +9,7 @@ export function logException(ex, context) {
     extra: context,
   })
   // eslint-disable-line no-unused-expressions
-  if (window && window.console && console.error) {
+  /* if (window && window.console && console.error) {
     console.error(ex)
-  }
+  } */
 }

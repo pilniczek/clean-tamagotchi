@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     ':hover': {
       cursor: 'pointer',
       boxShadow: '0px 0px 5px #79589f',
-    }
+    },
   },
   toggableBottom: {
     padding: '2rem 2rem 1rem 2rem',
