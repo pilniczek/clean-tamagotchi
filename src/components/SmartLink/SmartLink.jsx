@@ -3,6 +3,7 @@ import { node, oneOf, string } from 'prop-types'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './styles'
+import ErrorBoundary from '../ErrorBoundary'
 
 
 const SmartLink = ({
@@ -32,13 +33,15 @@ const SmartLink = ({
   }
   if (targetType === 'ui') {
     return (
-      <button
-        className={[className, css(styles[targetType], styles[type])].join(' ')}
-        onClick={() => console.log(window.user.wtf)}
-      >
-        {console.log(window.user.wtf)}
-        {children}
-      </button>
+      <ErrorBoundary>
+        <button
+          className={[className, css(styles[targetType], styles[type])].join(' ')}
+          onClick={() => console.log(window.user.wtf)}
+        >
+          {/*console.log(window.user.wtf)*/}
+          {children}
+        </button>
+      </ErrorBoundary>
     )
   }
   return null

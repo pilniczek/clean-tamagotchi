@@ -11,7 +11,6 @@ import logo from './images/logo.svg'
 import product from './images/product.jpg';
 import { selectApiData } from './selectors'
 import styles from './styles'
-import ErrorBoundary from '../../components/ErrorBoundary'
 
 
 const getMyIp = (apiData) => (
@@ -46,12 +45,9 @@ class App extends Component {
           width={300}
           height={300}
         />
-        <ErrorBoundary>
-          <SmartLink targetType="ui" ui="toggle" id="uiFunc1">
-            ui
-          </SmartLink>
-        </ErrorBoundary>
-
+        <SmartLink targetType="ui" ui="toggle" id="uiFunc1">
+          ui
+        </SmartLink>
         <table>
           <tbody>
             <tr>
